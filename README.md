@@ -22,3 +22,19 @@ reason:类型不匹配
 sovle：
 1.项目->属性—>字符集—>使用多字节字符集
 2.显示类型转换
+
+--------OpenSCManager-------
+SC_HANDLE schSCManager = NULL;
+function 
+OpenSCManager(lpMachineName, lpDatabaseName: PChar;dwDesiredAccess: DWORD): SC_HANDLE; stdcall;
+lpmachinename：目标机器名，如果该指针为NULL ，或者如果它指向一个空字符串，函数连接到服务控制管理器在本地计算机上。
+lpdatabasename：服务控制管理数据库，此字符串应指定ServicesActive 。如果该指针为NULL ，该ServicesActive数据库默认情况下打开。
+dwDesiredAccess：指定服务的访问控制管理权限，SC_MANAGER_ALL_ACCESS：所有权限
+                                          SC_MANAGER_CONNECT：
+                                          SC_MANAGER_CREATE_SERVICE：
+                                          SC_MANAGER_ENUMERATE_SERVICE：
+                                          SC_MANAGER_LOCK：
+                                          SC_MANAGER_QUERY_LOCK_STATUS：
+                                          如果函数成功，返回值是一个句柄指定的服务控制管理器数据库。如果函数失败，返回值为NULL 。要获得扩展错误信息，请使用GetLastError 获得错误代码。
+OpenSCManager函数是在创建一个服务对象（CreateService），并且把它加入到要调用的API中。
+-------end----------                                          
