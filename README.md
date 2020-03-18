@@ -37,4 +37,10 @@ dwDesiredAccess：指定服务的访问控制管理权限，SC_MANAGER_ALL_ACCES
                                           SC_MANAGER_QUERY_LOCK_STATUS：
                                           如果函数成功，返回值是一个句柄指定的服务控制管理器数据库。如果函数失败，返回值为NULL 。要获得扩展错误信息，请使用GetLastError 获得错误代码。
 OpenSCManager函数是在创建一个服务对象（CreateService），并且把它加入到要调用的API中。
--------end----------                                          
+-------end----------   
+release X64 error：
+error LNK2001
+solution：https://blog.csdn.net/u013925378/article/details/95308478
+路径“xxx.exe”e”的访问被拒绝
+reason:当前程序被占用，在任务管理器中结束进程，rebuild。
+
